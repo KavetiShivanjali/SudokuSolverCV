@@ -1,4 +1,8 @@
 pandas
 numpy
 seaborn
+tensorflow 
+opencv-python
+matplotlib
+scikit-learn
 -e .
