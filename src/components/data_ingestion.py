@@ -10,10 +10,10 @@ from dataclasses import dataclass
 
 @dataclass
 class DataIngestionConfig:
-    train_data_path: str = os.path.join('artifacts','/data/train/')
-    test_data_path: str = os.path.join('artifacts','/data/test/')
-    validation_data_path: str = os.path.join('artifacts','/data/validation/')
-    raw_data_path: str = os.path.join('artifacts','/data/')
+    train_data_path: str = os.path.join('artifacts/','data/train/')
+    test_data_path: str = os.path.join('artifacts/','data/test/')
+    validation_data_path: str = os.path.join('artifacts/','data/validation/')
+    raw_data_path: str = os.path.join('artifacts/','data/')
 
 class DataIngestion:
     def __init__(self):
