@@ -40,15 +40,22 @@ class DataIngestion:
                 test_files = data_files[val_cut:test_cut]
 
                 for file in train_files:
-                    shutil.move('final_digits_data/' + str(i)+'/'+file,destination_train_folder)
+                    shutil.move('final_digits_data/' + str(i)+'/'+file, destination_train_folder)
+                
+                logging.info(str(i) + "training folder created")
                 
                 for file in val_files:
                     shutil.move('final_digits_data/' + str(i) + '/' + file, destination_validation_folder)
+
+                logging.info(str(i) + "validation folder created")
                 
                 for file in test_files:
                     shutil.move('final_digits_data/' + str(i) + '/' + file, destination_test_folder)
+                
+                logging.info(str(i) + "test folder created")
 
             logging.info("Data ingested along with train test split.")
+            
             return(
                 self.ingestion_config.train_data_path,
                 self.ingestion_config.validation_data_path,
