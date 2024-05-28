@@ -6,4 +6,5 @@ opencv-python
 matplotlib
 scikit-learn
 dataclasses
+dill
 -e .

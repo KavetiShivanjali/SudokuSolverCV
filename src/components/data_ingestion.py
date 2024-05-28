@@ -1,12 +1,17 @@
 import os
 import sys
 import shutil
+
+from data_transformation import DataTransformation
+from data_transformation import DataTransformationConfig
+
 from src.exception import CustomException
 from src.logger import logging
-
 import tensorflow as tf
 from tensorflow import keras
 from dataclasses import dataclass
+
+
 
 @dataclass
 class DataIngestionConfig:
@@ -14,6 +19,8 @@ class DataIngestionConfig:
     test_data_path: str = os.path.join('artifacts/','data/test/')
     validation_data_path: str = os.path.join('artifacts/','data/validation/')
     raw_data_path: str = os.path.join('artifacts/','data/')
+
+
 
 class DataIngestion:
     def __init__(self):
@@ -66,4 +73,7 @@ class DataIngestion:
 
 if __name__ == "__main__":
     obj = DataIngestion()
-    obj.initiate_data_ingestion()
+    train_data_path,validation_data_path,test_data_path = obj.initiate_data_ingestion()
+
+    data_transformer = DataTransformation()
+    data_transformer.initiate_data_transformation(train_data_path,validation_data_path,test_data_path)
