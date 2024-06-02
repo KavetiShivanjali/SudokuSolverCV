@@ -7,4 +7,5 @@ matplotlib
 scikit-learn
 dataclasses
 dill
+streamlit
 -e .
